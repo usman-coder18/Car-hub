@@ -27,3 +27,10 @@ model:string;
 transmission:string;
 year:number;
 }
+export interface FilterProps{
+    manufacturer?:string;
+    year?:number;
+    model?:string;
+    fuel?:string;
+    limit?:number;
+}

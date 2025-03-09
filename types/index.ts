@@ -24,7 +24,7 @@ export interface FilterProps {
 }
 
 export interface HomeProps {
-  searchParams: FilterProps;
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
 export interface CarCardProps {

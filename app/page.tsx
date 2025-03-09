@@ -3,14 +3,15 @@ import { HomeProps } from "@/types";
 import { fuels, yearsOfProduction } from "@/constants";
 import { Carcard, ShowMore, SearchBar, CustomFilter, Hero } from "@/components";
 
-export default async function Home({ searchParams }: HomeProps) {
+export default async function Home({ searchParams }: { searchParams: Record<string, string | string[] | undefined> }) {
   const allCars = await fetchCars({
-    manufacturer: searchParams.manufacturer || "",
-    year: searchParams.year || 2022,
-    fuel: searchParams.fuel || "",
-    // limit: searchParams.limit || 10,
-    model: searchParams.model || "",
+    manufacturer: searchParams.manufacturer?.toString() || "",
+    year: searchParams.year ? Number(searchParams.year) : 2022,
+    fuel: searchParams.fuel?.toString() || "",
+    limit: searchParams.limit ? Number(searchParams.limit) : 10,
+    model: searchParams.model?.toString() || "",
   });
+
 console.log("fetched cars", allCars);
 
   const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;

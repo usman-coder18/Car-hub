@@ -9,7 +9,7 @@ export default async function Home({ searchParams }: HomeProps) {
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2022,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
+    limit: searchParams.limit || 0,
     model: searchParams.model || "",
   });
 
@@ -37,15 +37,16 @@ export default async function Home({ searchParams }: HomeProps) {
         {!isDataEmpty ? (
           <section>
             <div className='home__cars-wrapper'>
-              {allCars?.map((car) => (
-                <CarCard car={car} />
+              {allCars?.map((car,index) => (
+                <CarCard key={car.id||`car-${index}`} car={car} />
               ))}
             </div>
 
             <ShowMore
-              pageNumber={(searchParams.limit || 10) / 10}
-              isNext={(searchParams.limit || 10) > allCars.length}
-            />
+  pageNumber={Number(searchParams.limit) || 10} 
+  isNext={(Number(searchParams.limit) || 1) > allCars.length} 
+/>
+
           </section>
         ) : (
           <div className='home__error-container'>

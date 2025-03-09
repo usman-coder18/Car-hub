@@ -11,7 +11,6 @@
   font-family: "Manrope", sans-serif;
 }
 
-/* START: General styles */
 .max-width {
   @apply max-w-[1440px] mx-auto;
 }
@@ -35,9 +34,7 @@
 .custom-btn {
   @apply flex flex-row relative justify-center items-center py-3 px-6 outline-none;
 }
-/* END: General styles */
 
-/* START: Hero styles */
 .hero {
   @apply flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto;
 }
@@ -60,11 +57,7 @@
 
 .hero__image-overlay {
   @apply absolute  xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
-  /* absolute top-0 right-0 bg-hero-bg bg-cover bg-center  */
 }
-/* END: Hero styles */
-
-/* START: Home styles */
 
 .home__text-container {
   @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
@@ -85,9 +78,7 @@
 .home__error-container {
   @apply mt-16 flex justify-center items-center flex-col gap-2;
 }
-/* END: Home styles */
 
-/* START: Car Card styles */
 .car-card {
   @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
 }
@@ -131,9 +122,7 @@
 .car-card__btn-container {
   @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
 }
-/* END: Car Card styles */
 
-/* START: Car Details styles */
 .car-details__dialog-panel {
   @apply relative w-full max-w-lg max-h-[90vh] overflow-y-auto transform rounded-2xl bg-white p-6 text-left shadow-xl transition-all flex flex-col gap-5;
 }
@@ -145,9 +134,7 @@
 .car-details__main-image {
   @apply relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg;
 }
-/* END: Car Details styles */
 
-/* START: Custom Filter styles */
 .custom-filter__btn {
   @apply relative w-full min-w-[127px] flex justify-between items-center cursor-default rounded-lg bg-white py-2 px-3 text-left shadow-md sm:text-sm border;
 }
@@ -155,9 +142,7 @@
 .custom-filter__options {
   @apply absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm;
 }
-/* END: Custom Filter styles */
 
-/* START: Footer styles */
 .footer {
   @apply flex flex-col text-black-100  mt-5 border-t border-gray-100;
 }
@@ -185,9 +170,7 @@
 .footer__copyrights-link {
   @apply flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10;
 }
-/* END: Footer styles */
 
-/* START: searchbar styles */
 .searchbar {
   @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
 }
@@ -199,9 +182,7 @@
 .searchbar__input {
   @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm;
 }
-/* END: searchbar styles */
 
-/* START: search manufacturer styles */
 .search-manufacturer {
   @apply flex-1 max-sm:w-full flex justify-start items-center;
 }
@@ -217,4 +198,18 @@
 .search-manufacturer__option {
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
-/* END: search manufacturer styles */
+
+
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    width: 90% !important; 
+    left: 50% !important;
+    transform: translateX(-50%) !important; 
+    top: 10px !important; 
+  }
+
+  .Toastify__toast {
+    font-size: 14px !important; 
+    padding: 10px !important; 
+  }
+}

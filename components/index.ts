@@ -7,7 +7,9 @@ import CustomFilter from "./CustomFilter";
 import SearchManufacturer from "./SearchManufacturer";
 import Carcard from "./CarCard";
 import CardDetails from "./CardDetails";
+import ShowMore from "./ShowMore";
 export { 
+    ShowMore,
     CardDetails,
     Carcard,
     SearchManufacturer,
